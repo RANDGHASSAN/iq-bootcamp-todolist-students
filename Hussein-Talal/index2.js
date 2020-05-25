@@ -42,7 +42,8 @@ function addTask(){
             task : task.value,
             deadline : deadline.value,
             priority: priority.value,
-            id : Math.floor((Math.random()*10000000))
+            id : Math.floor((Math.random()*10000000)),
+            isChecked : false
         }
         tasks.push(taskObj);
         UpdateLocalStorage();
@@ -60,14 +61,14 @@ function UpdateLocalStorage(){
 function displayTask(taskObj){
     const li = document.createElement('li');
     li.innerHTML = `<label class='col s1 check-task'>
-        <input onclick='isChecked(this.parentNode.parentNode.id)' class='task-check' type='checkbox'><span></span>
+        <input onclick='isChecked(this.parentNode.parentNode.id)' class='task-check' type='checkbox' ><span></span>
     </label>
     <div class='col s7'>
         <span class='task'></span>
         <span class='deadline'></span>
     </div>
     <div class='col s2 secondary'>
-        <span class='priority badge red accent-2 '></span>
+        <span class='priority badge '></span>
     </div><div class='col s2 secondary'>
         <a onclick='deleteTask(this.parentNode.parentNode.id)' class='secondary-content'>
             <i class='material-icons red-text'>delete</i>
@@ -79,11 +80,25 @@ function displayTask(taskObj){
     const task = document.getElementsByClassName('task')[numberOfTasks];
     const deadline = document.getElementsByClassName('deadline')[numberOfTasks];
     const priority = document.getElementsByClassName('priority')[numberOfTasks];
+    const checkbox = document.getElementsByClassName('task-check')[numberOfTasks];
+    if(taskObj.isChecked){
+        checkbox.setAttribute('checked',true);
+    }
+    if(taskObj.priority === 'HIGH'){
+        priority.classList.add("red", "accent-2");
+    }
+    else if(taskObj.priority === 'MEDIUM'){
+        priority.classList.add("orange", "darken-2");
+    }
+    else{
+        priority.classList.add("green", "darken-1");
+    }
     task.innerText = taskObj.task;
     deadline.innerText = taskObj.deadline;
     priority.innerText = taskObj.priority;
     numberOfTasks++;
     updateTaskIndecator();
+    isChecked(taskObj.id);
 }
 
 function printLocal(){
@@ -101,8 +116,13 @@ function deleteTask(id){
     updateTaskIndecator()
 }
 
-function deleteFromTasks(id){
+function findTaskIndex(id){
     let index = tasks.findIndex(obj => obj.id === parseInt(id));
+    return index;
+}
+
+function deleteFromTasks(id){
+    let index = findTaskIndex(id);
     tasks.splice(index,1);
     UpdateLocalStorage();
 }
@@ -111,12 +131,16 @@ function isChecked(id){
     const li = document.getElementById(id);
     const checkbox = li.getElementsByClassName('task-check')[0];
     const task = li.getElementsByClassName('task')[0];
+    let index = findTaskIndex(id);
     if(checkbox.checked){
         task.style.textDecoration= "line-through";
+        tasks[index].isChecked = true;
     }
     else{
         task.style.textDecoration= "none";
+        tasks[index].isChecked = false;
     }
+    UpdateLocalStorage();
 }
 
 //initializing materialize components

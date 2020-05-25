@@ -63,6 +63,7 @@ header h4 {
 }
 span.priority {
     border-radius: 3px;
-    width: 6rem;
+    font-size: .8rem !important;
+    width: auto;
     color: white !important;
 }
