@@ -76,6 +76,7 @@ function displayTask(taskObj){
     </div>`;
     li.classList = 'collection-item row';
     li.setAttribute('id',taskObj.id);
+    li.setAttribute('data-aos','fade-right');
     ul.appendChild(li);
     const task = document.getElementsByClassName('task')[numberOfTasks];
     const deadline = document.getElementsByClassName('deadline')[numberOfTasks];

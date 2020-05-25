@@ -3,16 +3,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-       <!-- Compiled and minified CSS -->
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-       <!-- Compiled and minified JavaScript -->
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-       <!-- <link href="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.min.css" rel="stylesheet">
-       <script src="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.js"></script> -->
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!-- <link href="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.min.css" rel="stylesheet">
+        <script src="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.js"></script> -->
 
-       <!-- material icons -->
-       <link rel = "stylesheet"href = "https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+        <!-- material icons -->
+        <link rel = "stylesheet"href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <!-- aos animations  -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Todo List</title>
 </head>
 <body>
@@ -25,7 +27,9 @@
     <main>
         <section class="container">
             <div class="row date">
-                <h4>Today : </h4><h4 id="todayDate"></h>
+                <div class="col s12">
+                    <h4>Today : </h4><h4 id="todayDate"></h>
+                </div>
             </div>
             <p id="msg"></p>
             <div class="row">
@@ -50,7 +54,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        <button id="submit" class = "btn waves-effect deep-purple accent-2 z-depth-3"><i class="material-icons left">add</i> Add task</button>
+                        <div class="col">
+                            <button id="submit" class = "btn waves-effect deep-purple accent-2 z-depth-3"><i class="material-icons left">add</i> Add task</button>
+
+                        </div>
                     </div>
                     
                 </form>
@@ -61,15 +68,19 @@
             <div class="horizontal-line"></div>
         </div>
         
-        <section class="container">
+        <section class="container todo-list">
             <h6 id="noTasks">You got no tasks !!! keep it like that</h6>
             
-                <ul class="todo-items col s12 collection">
+                <ul class="todo-items col s12 ">
                     
                 </ul>
             
         </section>
     </main>
 <script src="index2.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
