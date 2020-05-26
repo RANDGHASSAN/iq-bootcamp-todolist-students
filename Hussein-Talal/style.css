@@ -6,6 +6,13 @@
     --lighter-dark-bg-color: #2c2b31;
 }
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
 body {
     background-color: var(--light-bg-color);
 }
@@ -24,6 +31,8 @@ body {
     padding: 1rem;
     margin-top: 3rem;
 }
+
+/* dark mode styling */
 body.dark-mode  {
     background-color: var(--dark-bg-color);
     color: white;
@@ -42,16 +51,9 @@ body.dark-mode  {
     color: white;
 }
 
-.select-dropdown {
+.dark-mode .select-dropdown {
     background-color:var(--lighter-dark-bg-color) !important ;
     color: white !important;
-}
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
 }
 
 /* span {
@@ -60,13 +62,6 @@ body.dark-mode  {
 header h4 {
     font-size: 1rem;
     margin-top:.8rem;
-}
-
-.horizontal-line {
-    height: 1px;
-    width: 70%;
-    margin: 3rem auto;
-    background-color: #dddddd;
 }
 
 .todo-items {
