@@ -1,8 +1,7 @@
 :root {
     --light-bg-color: #fcfbfe;
-    /* --light-shadow-color: #111; */
     --dark-bg-color:#1A191E;
-    --dark-shadow-color:#111;
+    --shadow-color:rgba(0, 0, 0, 0.3);
     --lighter-dark-bg-color: #2c2b31;
 }
 
@@ -20,14 +19,14 @@ body {
 .container .todo-items .collection-item {
     background-color: white;
     padding: 1rem;
-    box-shadow: 0 0 1rem -0.25rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 1rem -0.25rem var(--shadow-color) ;
     margin-left: 0;
     margin-right: 0;
 }
 
 .container:nth-child(1) {
     background-color: white;
-    box-shadow:0 0 1rem -0.25rem rgba(0, 0, 0, 0.1);
+    box-shadow:0 0 1rem -0.25rem var(--shadow-color);
     padding: 1rem;
     margin-top: 3rem;
 }
@@ -56,14 +55,13 @@ body.dark-mode  {
     color: white !important;
 }
 
-/* span {
-    display: block;
-} */
 header h4 {
     font-size: 1rem;
     margin-top:.8rem;
 }
-
+body section.todo-list {
+    margin-top: 3rem;
+}
 .todo-items {
     list-style: none;
 }
