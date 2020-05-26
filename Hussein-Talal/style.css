@@ -3,7 +3,48 @@
     /* --light-shadow-color: #111; */
     --dark-bg-color:#1A191E;
     --dark-shadow-color:#111;
-    --lighter-dark-bg-color: #27262b;
+    --lighter-dark-bg-color: #2c2b31;
+}
+
+body {
+    background-color: var(--light-bg-color);
+}
+
+.container .todo-items .collection-item {
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 0 1rem -0.25rem rgba(0, 0, 0, 0.1);
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.container:nth-child(1) {
+    background-color: white;
+    box-shadow:0 0 1rem -0.25rem rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin-top: 3rem;
+}
+body.dark-mode  {
+    background-color: var(--dark-bg-color);
+    color: white;
+}
+.dark-mode .container .todo-items .collection-item {
+    background-color: var(--lighter-dark-bg-color);
+    box-shadow:0 0 1rem -0.25rem rgba(255, 255, 255, 0.082);
+    color: white;
+}
+.dark-mode .container:nth-child(1) {
+    background-color: var(--lighter-dark-bg-color);
+    box-shadow:0 0 1rem -0.25rem rgba(255, 255, 255, 0.082);
+    color: white;
+}
+.dark-mode input {
+    color: white;
+}
+
+.select-dropdown {
+    background-color:var(--lighter-dark-bg-color) !important ;
+    color: white !important;
 }
 
 * {
@@ -61,7 +102,6 @@ section.todo-list{
     display: flex;
     flex-direction: row;
     padding-right: .5rem;
-    margin-top: 3rem;
     margin-bottom: -1rem;
 }
 
