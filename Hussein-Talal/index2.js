@@ -144,6 +144,16 @@ function isChecked(id){
     UpdateLocalStorage();
 }
 
+//dark mode toggler
+const darkTogller = document.getElementById('checkbox');
+darkTogller.addEventListener('change', ()=>{
+    if(darkTogller.checked){
+        document.getElementsByTagName('html')[0].setAttribute('color-mode','dark');
+    }
+    else{
+        document.getElementsByTagName('html')[0].setAttribute('color-mode','light')
+    }
+})
 //initializing materialize components
 const calendar = document.querySelector('.datepicker');
 M.Datepicker.init(calendar,{
