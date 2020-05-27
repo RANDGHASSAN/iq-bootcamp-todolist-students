@@ -71,7 +71,7 @@ function displayTask(taskObj){
         <span class='priority badge '></span>
     </div><div class='col s2 secondary'>
         <a onclick='deleteTask(this.parentNode.parentNode.id)' class='secondary-content'>
-            <i class='material-icons red-text'>delete</i>
+            <i class='material-icons'>delete</i>
         </a>
     </div>`;
     li.classList = 'collection-item row';

@@ -10,11 +10,10 @@
     --primary: #01408e;
     --secondary: #3c5d5c;
     --tertiary: #fff7d6;
-    --box-shadow: rgba(0, 0, 0, 0.082);
+    --box-shadow: rgba(0, 0, 0, 0.1);
   }
   
 :root[color-mode="dark"] {
-    --light-bg-color: #fcfbfe;
     --surface1: #262626;
     --surface2: #333333;
     --surface3: #404040;
@@ -25,15 +24,9 @@
     --primary: #8fceff;
     --secondary: #72faca;
     --tertiary: #eee8a9;
-    --box-shadow:rgba(255, 255, 255, 0.082);
+    --box-shadow:rgba(0, 0, 0, 0.2);
   }
 
-  :root {
-    --light-bg-color: #fcfbfe;
-    /* --dark-bg-color:#1A191E;
-    --shadow-color:rgba(0, 0, 0, 0.3);
-    --lighter-dark-bg-color: #2c2b31; */
-}  
 
 * {
     padding: 0;
@@ -47,26 +40,35 @@ html {
 }
 
 body {
-    background-color: var(--light-bg-color) !important;
+    background-color: var(--surface1) !important;
+    color: var(--element1);
 }
 
+
 .container .todo-items .collection-item {
-    background-color: white;
+    background-color: var(--surface2);
     padding: 1rem;
     box-shadow: 0 0 1rem -0.25rem var(--box-shadow) ;
     margin-left: 0;
     margin-right: 0;
+    color: var(--element2);
 }
 
 .container:nth-child(2) {
-    background-color: white;
+    background-color: var(--surface2);
     box-shadow:0 0 1rem -0.25rem var(--box-shadow);
     padding: 1rem;
     margin-top: 2rem;
+    color: var(--element2);
 }
 
+input {
+    color: var(--element2);
+}
+
+
 /* dark mode styling */
-body.dark-mode  {
+/* body.dark-mode  {
     background-color: var(--dark-bg-color);
     color: white;
 }
@@ -87,7 +89,7 @@ body.dark-mode  {
 .dark-mode .select-dropdown {
     background-color:var(--lighter-dark-bg-color) !important ;
     color: white !important;
-}
+} */
 
 header h4 {
     font-size: 1rem;
