@@ -1,9 +1,39 @@
-:root {
+
+:root[color-mode="light"] {
+    --surface1: #e6e6e6;
+    --surface2: #f2f2f2;
+    --surface3: #ffffff;
+    --element1: #111111;
+    --element2: #222222;
+    --element3: #333333;
+    --elementInverse: #eee;
+    --primary: #01408e;
+    --secondary: #3c5d5c;
+    --tertiary: #fff7d6;
+    --box-shadow: rgba(0, 0, 0, 0.082);
+  }
+  
+:root[color-mode="dark"] {
     --light-bg-color: #fcfbfe;
-    --dark-bg-color:#1A191E;
+    --surface1: #262626;
+    --surface2: #333333;
+    --surface3: #404040;
+    --element1: #eeeeee;
+    --element2: #dddddd;
+    --element3: #cccccc;
+    --elementInverse: #111;
+    --primary: #8fceff;
+    --secondary: #72faca;
+    --tertiary: #eee8a9;
+    --box-shadow:rgba(255, 255, 255, 0.082);
+  }
+
+  :root {
+    --light-bg-color: #fcfbfe;
+    /* --dark-bg-color:#1A191E;
     --shadow-color:rgba(0, 0, 0, 0.3);
-    --lighter-dark-bg-color: #2c2b31;
-}
+    --lighter-dark-bg-color: #2c2b31; */
+}  
 
 * {
     padding: 0;
@@ -12,21 +42,25 @@
     font-family: 'Roboto', sans-serif;
 }
 
+html {
+    font-size: 1rem !important;
+}
+
 body {
-    background-color: var(--light-bg-color);
+    background-color: var(--light-bg-color) !important;
 }
 
 .container .todo-items .collection-item {
     background-color: white;
     padding: 1rem;
-    box-shadow: 0 0 1rem -0.25rem var(--shadow-color) ;
+    box-shadow: 0 0 1rem -0.25rem var(--box-shadow) ;
     margin-left: 0;
     margin-right: 0;
 }
 
-.container:nth-child(1) {
+.container:nth-child(2) {
     background-color: white;
-    box-shadow:0 0 1rem -0.25rem var(--shadow-color);
+    box-shadow:0 0 1rem -0.25rem var(--box-shadow);
     padding: 1rem;
     margin-top: 3rem;
 }
